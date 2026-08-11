@@ -556,7 +556,7 @@ async function sendPayloadToElfldr(name) {
     if (!payloadIsListed(name))
         throw new Error("payload is not listed in this menu");
 
-    const response = await fetch("../payloads/" + encodeURIComponent(name),
+    const response = await fetch("./payloads/" + encodeURIComponent(name),
         { cache: "no-store" });
     if (!response.ok)
         throw new Error("payload fetch failed: HTTP " + response.status);
