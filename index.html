@@ -90,6 +90,15 @@ try {
     });
 } catch (e) {}
 </script>
-
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/slopkit/sw.js")
+            .catch(function (error) {
+                console.error("Service Worker registration failed:", error);
+            });
+    });
+}
+</script>
 </body>
 </html>
